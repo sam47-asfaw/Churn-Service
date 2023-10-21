@@ -1,0 +1,1 @@
+A classification ml model to predict the probability of churning customers of a telcom service.
