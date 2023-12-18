@@ -8,16 +8,11 @@ with open('./model_C=1.0.bin', 'rb') as f_in:
 
 app = Flask('churn')
 
-#transform the 
-def transform(customer):
-    return dv.transform(customer)
-
-
 
 @app.route('/predict', methods= ['POST'])
 def predict():
     customer = request.get_json()
-    X = transform(customer)
+    X = dv.transform(customer)
     prediction = float(model.predict_proba(X))
     churn = bool(prediction < 0.5)
 
