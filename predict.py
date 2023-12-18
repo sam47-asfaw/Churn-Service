@@ -12,26 +12,16 @@ app = Flask('churn')
 @app.route('/predict', methods= ['POST'])
 def predict():
     customer = request.get_json()
-    X = dv.transform(customer)
-    prediction = float(model.predict_proba(X))
-    churn = bool(prediction < 0.5)
-
+    X = dv.transform([customer])
+    prediction = float(model.predict_proba(X)[0,1])
+    churn = bool(prediction == 0.0)
     
     result = {
-        'Churn Probablility': prediction,
-        'churn': churn,
-        'Customer Status': ''
+        'Churn label': prediction,
+        'Customer Status': churn
     }
-
-    if churn < 0.5:
-        result['Customer Status'] = 'Customer is likely to churn, send promotional email.'
-        return jsonify(result)
-    elif churn >= 0.5 and churn < 1.5:
-        result['Customer Status'] = 'Welcome to our telecom service.'
-        return jsonify(result)
-    else:
-        result['Customer Status'] = 'Thank you for being valued customer'
-        return jsonify(result)
+    
+    return jsonify(result)
 
 
 if __name__ == '__main__':
