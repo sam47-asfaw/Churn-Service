@@ -16,27 +16,27 @@ Identifying customers at risk of churning is essential for companies that provid
 ## Project Structure
 1. ReadME.md("https://github.com/sam47-asfaw/Churn-Service/blob/main/README.md"): contains all the information about the project.
 
-2. [notebook.ipynb]("https://github.com/sam47-asfaw/Churn-Service/blob/main/notebook.ipynb"): contains the following  
+2. [notebook.ipynb](https://github.com/sam47-asfaw/Churn-Service/blob/main/notebook.ipynb): contains the following  
  * Data ingestion and preparation
  * Exploratory Data Analysis
  * feature engineering and selection
  * model training, hyperparameter optimization and model selection
 
-3. model_C=1.0.bin("https://github.com/sam47-asfaw/Churn-Service/blob/main/model_C=1.0.bin"): final model in pickle format
+3.[model_C=1.0.bin](https://github.com/sam47-asfaw/Churn-Service/blob/main/model_C=1.0.bin): final model in pickle format
    
 4. train.py("https://github.com/sam47-asfaw/Churn-Service/blob/main/train.py"): python script that trains the final selected model
 
 
 
-5. predict.py("https://github.com/sam47-asfaw/Churn-Service/blob/main/predict.py"): flask api that serves the final result of model
+5. [predict.py](https://github.com/sam47-asfaw/Churn-Service/blob/main/predict.py): flask api that serves the final result of model
 
-6. requirements.txt("https://github.com/sam47-asfaw/Churn-Service/blob/main/requirements.txt"): file containing the required dependencies that have to be installed for the local enviroment
+6. [requirements.txt](https://github.com/sam47-asfaw/Churn-Service/blob/main/requirements.txt): file containing the required dependencies that have to be installed for the local enviroment
 
-7. Dockerfile("https://github.com/sam47-asfaw/Churn-Service/blob/main/Dockerfile"): file with instruction on how to containerize the project.
+7. [Dockerfile](https://github.com/sam47-asfaw/Churn-Service/blob/main/Dockerfile): file with instruction on how to containerize the project.
 
-8. test.py("https://github.com/sam47-asfaw/Churn-Service/blob/main/test.py"): script used to test the final model
+8. [test.py](https://github.com/sam47-asfaw/Churn-Service/blob/main/test.py): script used to test the final model
 
-9. test_data("https://github.com/sam47-asfaw/Churn-Service/blob/main/test_data"): contains json values of records for test purposes 
+9. [test_data](https://github.com/sam47-asfaw/Churn-Service/blob/main/test_data): contains json values of records for test purposes 
 
 ## Data
 About dataset
