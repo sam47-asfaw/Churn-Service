@@ -4,15 +4,15 @@ FROM python:3.11-slim
 # Set working directory for the project
 WORKDIR /app
 
-# Create Conda environment from the YAML file
+# Get dependencies
 COPY requirements.txt .
 
-# Activate the environment, and make sure it's activated:
+# Download the dependencies:
 RUN pip install -r requirements.txt
 
 COPY ["model_C=1.0.bin", "predict.py", "./"]
 
 EXPOSE 8080
 
-CMD [ "waitress-serve", "--port=8080", "predict:app"]
+CMD ["waitress-serve","--host=0.0.0.0","--port=8080","predict:app"]
 

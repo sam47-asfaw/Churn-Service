@@ -18,7 +18,7 @@ def predict():
     
     result = {
         'Churn label': prediction,
-        'Customer Status': churn
+        'Customer Churn Status': churn
     }
     
     return jsonify(result)
