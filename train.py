@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
 import pickle
 
 import pandas as pd
@@ -24,10 +18,6 @@ from sklearn.metrics import f1_score
 import warnings
 warnings.filterwarnings('ignore')
 
-
-# In[3]:
-
-
 # read and display general information about the dataset
 df = pd.read_csv('telecom_customer_churn.csv')
 
@@ -44,30 +34,15 @@ for col in categorical:
     df[col] = df[col].fillna(most_occurring_word)
 
 
-# In[4]:
-
-
 encoder = OrdinalEncoder()
 df['customer_status'] = encoder.fit_transform(df[['customer_status']])
 df['customer_status'].value_counts(normalize=True)
-
-
-# In[5]:
-
 
 # Split the Dataset into train and test
 SEED = 42
 df_full_train, df_test = train_test_split(df, test_size=0.2, random_state=SEED)
 
-
-# In[6]:
-
-
 df_full_train = df_full_train.reset_index(drop=True)
-
-
-# In[8]:
-
 
 # final features selected
 numeric =  [ 'age',
@@ -105,10 +80,6 @@ categorical = [
     'payment_method',
 ]
 
-
-# In[19]:
-
-
 def train(data, y,model):
     dicts = data[categorical + numeric].to_dict(orient='records')
 
@@ -129,9 +100,6 @@ def predict(data, dv, model):
     return y_pred_prob
 
 
-# In[20]:
-
-
 rf = RandomForestClassifier(
                 max_depth=20,
                   n_estimators=20, 
@@ -141,21 +109,11 @@ dv, model = train(df_full_train, df_full_train.customer_status,rf)
 y_pred = predict(df_test, dv, model)
 
 
-# In[21]:
-
-
 roc_auc = roc_auc_score(df_test.customer_status, y_pred_prob, average='micro', multi_class= 'ovr')  
 print(f"ROC AUC Score: {roc_auc}")
 
-
-# In[22]:
-
-
 output_file = f'model_C={1.0}.bin'
 output_file
-
-
-# In[23]:
 
 
 f_out = open(output_file, 'wb')

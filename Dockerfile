@@ -12,7 +12,7 @@ RUN pip install -r requirements.txt
 
 COPY ["model_C=1.0.bin", "predict.py", "./"]
 
-EXPOSE 8888
+EXPOSE 8080
 
-ENTRYPOINT [ "waitress-serve", "--listen=0.0.0.0:8888", "predict:app"]
+CMD [ "waitress-serve", "--port=8080", "predict:app"]
 
