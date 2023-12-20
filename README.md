@@ -92,6 +92,7 @@ docker run -it --rm -p 8080:8080 your_container_name
 
 ## Example
 Here is an example of what the output will look like after deployed locally
+![result](https://github.com/sam47-asfaw/Churn-Service/assets/62788450/38cc0f28-933e-475b-b554-2f34ce511c15)
 
-![result](https://github.com/sam47-asfaw/Churn-Service/assets/62788450/50575e68-39c6-4a37-a31b-f54d3c8cd55c)
+
 
