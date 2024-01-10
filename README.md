@@ -14,7 +14,7 @@ Identifying customers at risk of churning is essential for companies that provid
 
 
 ## Project Structure
-1. [ReadME.md]("https://github.com/sam47-asfaw/Churn-Service/blob/main/README.md"): contains all the information about the project.
+1. [README.md]("https://github.com/sam47-asfaw/Churn-Service/blob/main/README.md"): contains all the information about the project.
 
 2. [notebook.ipynb](https://github.com/sam47-asfaw/Churn-Service/blob/main/notebook.ipynb) : contains the following  
  * Data ingestion and preparation
