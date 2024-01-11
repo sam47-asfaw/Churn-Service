@@ -109,7 +109,7 @@ dv, model = train(df_full_train, df_full_train.customer_status,rf)
 y_pred = predict(df_test, dv, model)
 
 
-roc_auc = roc_auc_score(df_test.customer_status, y_pred_prob, average='micro', multi_class= 'ovr')  
+roc_auc = roc_auc_score(df_test.customer_status, y_pred, average='micro', multi_class= 'ovr')  
 print(f"ROC AUC Score: {roc_auc}")
 
 output_file = f'model_C={1.0}.bin'
