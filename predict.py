@@ -20,10 +20,10 @@ def predict():
     if(prediction < 0.5):
         val = 'Customer Churned'
     
-    elif(prediction >= 0.5 and prediction <= 1 ):
+    elif(prediction >= 0.5 and prediction <= 1.0 ):
         val = 'Customer Joined'
     
-    else:
+    elif(prediction >= 1.5):
         val = 'Customer Stayed'
 
     result = {
