@@ -14,10 +14,21 @@ def predict():
     customer = request.get_json()
     X = dv.transform([customer])
     prediction = float(model.predict_proba(X)[0,1])
-    churn = bool(prediction == 0.0)
+    churn = bool(prediction <= 0.5)
+    val = ''
+
+    if(prediction < 0.5):
+        val = 'Customer Churned'
     
+    elif(prediction >= 0.5 and prediction <= 1 ):
+        val = 'Customer Joined'
+    
+    else:
+        val = 'Customer Stayed'
+
     result = {
         'Churn label': prediction,
+        'Customer status': val,
         'Customer Churn Status': churn
     }
     
