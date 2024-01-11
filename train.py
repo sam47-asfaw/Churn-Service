@@ -4,15 +4,12 @@ import pandas as pd
 import numpy as np
 
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import KFold
 
 from sklearn.feature_extraction import DictVectorizer
-from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.ensemble import RandomForestClassifier
 
 from sklearn.metrics import roc_auc_score
-from sklearn.metrics import mutual_info_score
 from sklearn.metrics import f1_score
 
 import warnings
@@ -95,9 +92,10 @@ def predict(data, dv, model):
 
     X = dv.transform(dicts)
 
+    y_pred = model.predict(X)
     y_pred_prob = model.predict_proba(X)
 
-    return y_pred_prob
+    return y_pred,y_pred_prob
 
 
 rf = RandomForestClassifier(
@@ -106,11 +104,11 @@ rf = RandomForestClassifier(
                   min_samples_leaf=2,
                   random_state=1)
 dv, model = train(df_full_train, df_full_train.customer_status,rf)
-y_pred = predict(df_test, dv, model)
+y_pred, y_pred_prob = predict(df_test, dv, model)
 
-
-roc_auc = roc_auc_score(df_test.customer_status, y_pred, average='micro', multi_class= 'ovr')  
-print(f"ROC AUC Score: {roc_auc}")
+roc_auc = roc_auc_score(df_test.customer_status, y_pred_prob, average='micro', multi_class= 'ovr')  
+f1 = f1_score(df_test.customer_status, y_pred, average="micro")
+print(f"ROC AUC Score: {roc_auc} and f1_Score:{f1}")
 
 output_file = f'model_C={1.0}.bin'
 output_file
