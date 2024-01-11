@@ -6,14 +6,14 @@ Identifying customers at risk of churning is essential for companies that provid
 
 ## Table of Contents
 
-- [Project Structure](#projectstr)
+- [ProjectStructure](#projectstructure)
 - [Data](#data)
-- [Running The Project](#run)
-- [Deployment](#deploy)
+- [RunProject](#runproject)
+- [Deployment](#deployment)
 - [Example](#example)
 
 
-## Project Structure
+## ProjectStructure
 1. [README](https://github.com/sam47-asfaw/Churn-Service/blob/main/README.md): contains all the information about the project.
 
 2. [notebook.ipynb](https://github.com/sam47-asfaw/Churn-Service/blob/main/notebook.ipynb) : contains the following  
@@ -49,7 +49,7 @@ Contents
 * The Customer Churn table contains information on all 7,043 customers from a Telecommunications company in California in Q2 2022
 * Each record represents one customer, and contains details about their demographics, location, tenure, subscription services, status for the quarter (joined, stayed, or churned), and more!
 
-## Running The Project
+## RunProject
 
 #### clone this repository:
 ```
